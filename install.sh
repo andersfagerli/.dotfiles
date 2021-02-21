@@ -29,21 +29,21 @@ if ! [ -x "$(command -v code)" ]; then
 	wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
 	sudo install -o root -g root -m 644 packages.microsoft.gpg /etc/apt/trusted.gpg.d/
 	sudo sh -c 'echo "deb [arch=amd64,arm64,armhf signed-by=/etc/apt/trusted.gpg.d/packages.microsoft.gpg] https://packages.microsoft.com/repos/code stable main" > /etc/apt/sources.list.d/vscode.list'
-	sudo apt install apt-transport-https
+	sudo apt install -y apt-transport-https
 	sudo apt update
-	sudo apt install code
+	sudo apt install -y code
 fi
 
 # Neovim
 if ! [ -x "$(command -v nvim)" ]; then
 	sudo add-apt-repository ppa:neovim-ppa/stable 
 	sudo apt-get update
-	sudo apt-get install neovim
+	sudo apt-get install -y neovim
 fi
 
 # Ranger
 if ! [ -x "$(command -v ranger)" ]; then
-	sudo apt install ranger
+	sudo apt install -y ranger
 	git clone https://github.com/alexanderjeurissen/ranger_devicons ~/.config/ranger/plugins/ranger_devicons
 	pip3 install ueberzug
 fi
@@ -54,7 +54,10 @@ if ! [ -x "$(command -v i3)" ]; then
 	dpkg -i ./keyring.deb
 	echo "deb http://debian.sur5r.net/i3/ $(grep '^DISTRIB_CODENAME=' /etc/lsb-release | cut -f2 -d=) universe" | sudo tee -a /etc/apt/sources.list.d/sur5r-i3.list
 	sudo apt-get update
-	sudo apt-get install i3
+	sudo apt-get install -y i3
+	sudo apt-get install -y i3blocks
+	# For correctly updating volume in i3bar
+	sudo apt-get install -y pavucontrol
 fi
 
 # Oh-my-zsh
