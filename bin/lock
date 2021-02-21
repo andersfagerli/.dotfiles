@@ -1,0 +1,7 @@
+#!/bin/bash
+
+icon=$HOME/.dotfiles/wallpaper/lock.png
+background=$HOME/.dotfiles/wallpaper/single.png
+convert $background -scale 10% -scale 1000% $background
+convert $background $icon -gravity center -composite -matte $background
+i3lock -u --tiling -i $background

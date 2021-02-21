@@ -1,0 +1,10 @@
+[user]
+    name = andersfagerli
+    email = anderstf@stud.ntnu.no
+[core]
+	editor = nvim
+[color]
+	diff = auto
+	status = auto
+	branch = auto
+	pager = true
