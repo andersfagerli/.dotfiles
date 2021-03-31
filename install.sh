@@ -8,7 +8,8 @@ sudo apt-get install -y \
 	python3-pip \
 	zsh \
 	feh \
-	zathura
+	zathura \
+	alacritty
 
 # Chrome
 if ! [ -x "$(command -v google-chrome)" ]; then
@@ -56,8 +57,25 @@ if ! [ -x "$(command -v i3)" ]; then
 	sudo apt-get update
 	sudo apt-get install -y i3
 	sudo apt-get install -y i3blocks
+	
+	# For i3-gaps
+	sudo add-apt-repository ppa:kgilmer/speed-ricer
+	sudo apt-get update
+	sudo apt install -y i3-gaps
+
 	# For correctly updating volume in i3bar
 	sudo apt-get install -y pavucontrol
+
+	# For keybinding
+	git clone https://github.com/schischi/xcwd.git
+	cd xcwd
+	make && sudo make install
+	cd ..
+	rm -rf xcwd
+
+	# Autotiling
+	pip3 install autotiling
+
 fi
 
 # Oh-my-zsh
