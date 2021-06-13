@@ -222,11 +222,14 @@ for_window [class="Spotify"] move to workspace $ws10
 
 # Custom keybindings
 bindsym $mod+shift+x exec betterlockscreen --off 60 -l -t ""
+bindsym $mod+XF86MonBrightnessDown exec brightnessctl -q s 10%-
+bindsym $mod+XF86MonBrightnessUp exec brightnessctl -q s 10%+
 
 # Startup
 exec --no-startup-id ${HOME}/.dotfiles/bin/fix-screens
 exec google-chrome
 exec spotify
 
-exec_always feh --bg-scale ~/.dotfiles/wallpaper/right.png --bg-scale ~/.dotfiles/wallpaper/left.png
+exec_always feh --bg-scale ~/.dotfiles/wallpaper/single.png
 exec_always --no-startup-id autotiling
+exec_always --no-startup-id picom

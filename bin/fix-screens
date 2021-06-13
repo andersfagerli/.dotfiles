@@ -1,7 +1,0 @@
-#!/bin/bash
-
-HOSTNAME=`hostname`
-
-if [ $HOSTNAME = "anderstf" ]; then
-	xrandr --output DVI-D-0 --right-of HDMI-0
-fi

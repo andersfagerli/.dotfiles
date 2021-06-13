@@ -27,8 +27,7 @@ colors:
     magenta: "#c678dd"
     cyan: "#56b6c2"
     white: "#ECEFF4"
-
-background_opacity: 1.0
+background_opacity: 0.9
 
 font:
   normal:
@@ -82,7 +81,5 @@ key_bindings:
   - { key: C, mods: Control|Shift, action: Copy }
   - { key: Key0, mods: Control, action: ResetFontSize }
   - { key: Equals, mods: Control, action: IncreaseFontSize }
-  - { key: Add, mods: Control, action: IncreaseFontSize }
-  - { key: Subtract, mods: Control, action: DecreaseFontSize }
   - { key: Minus, mods: Control, action: DecreaseFontSize }
   - { key: N, mods: Control, action: SpawnNewInstance }
