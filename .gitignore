@@ -1,0 +1,9 @@
+ranger/bookmarks
+ranger/tagged
+ranger/history
+
+__pycache__/
+*.pyo
+
+packages.microsoft.gpg
+keyring.deb

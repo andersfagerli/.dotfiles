@@ -1,0 +1,9 @@
+#!/bin/bash
+
+if [ "$1" = "off" ];then
+  echo "External monitor off"
+  xrandr --output HDMI-1 --off
+else
+  echo "External monitor on"
+  xrandr --output HDMI-1 --auto --right-of eDP-1
+fi
